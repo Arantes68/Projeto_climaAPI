@@ -1,0 +1,64 @@
+version: 2
+
+models:
+  - name: fct_analise_mensal
+    description: "Fato mensal de análise climática por cidade, com métricas agregadas baseadas apenas em dados da fonte 'comb' (dados combinados de observação e previsão). Inclui indicadores médios e as condições mais frequentes."
+    columns:
+      - name: cidade
+        description: "Nome da cidade."
+
+      - name: mes
+        description: "Mês de referência (primeiro dia do mês)."
+
+      - name: dias_com_dados
+        description: "Quantidade de dias com dados disponíveis no mês para a cidade."
+
+      - name: media_temperatura
+        description: "Temperatura média mensal (em ºC)."
+
+      - name: media_umidade
+        description: "Umidade relativa média mensal (em %)."
+
+      - name: media_precipitacao
+        description: "Precipitação média mensal registrada (em mm)."
+
+      - name: media_precipitacao_esperada
+        description: "Precipitação média mensal ponderada pela probabilidade (em mm)."
+
+      - name: dias_com_chuva
+        description: "Número de dias com precipitação superior a 0 no mês."
+
+      - name: media_amplitude_termica
+        description: "Média da diferença entre temperatura máxima e mínima no mês."
+
+      - name: media_horas_sol
+        description: "Média de horas de luz solar por dia no mês."
+
+      - name: media_uv
+        description: "Índice UV médio mensal."
+
+      - name: condicao_mais_frequente
+        description: "Condição climática predominante no mês (mais frequente)."
+
+      - name: lua_mais_comum
+        description: "Fase da lua mais comum durante o mês."
+  - name: fct_desvio_previsao
+    description: "Fato com os desvios entre os dados de previsão (fcst) e os dados combinados (comb) para temperatura, precipitação, sensação térmica e umidade, por cidade e data."
+    columns:
+      - name: cidade
+        description: "Nome da cidade."
+
+      - name: data
+        description: "Data da medição climática."
+
+      - name: desvio_temperatura
+        description: "Diferença entre temperatura prevista (fcst) e combinada (comb), em ºC."
+
+      - name: desvio_precipitacao
+        description: "Diferença entre precipitação prevista e combinada, em mm."
+
+      - name: desvio_sensacao
+        description: "Diferença entre sensação térmica prevista e combinada, em ºC."
+
+      - name: desvio_umidade
+        description: "Diferença entre umidade relativa prevista e combinada, em %."

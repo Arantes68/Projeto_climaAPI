@@ -1,0 +1,110 @@
+version: 2
+
+models:
+  - name: stg_clima
+    description: "Tabela de staging com dados meteorológicos diários extraídos da API, contendo apenas os campos brutos presentes no JSON."
+    columns:
+      - name: id_cidade
+        description: "Identificador único da cidade, gerado via hash MD5 do endereço."
+        tests:
+          - not_null
+
+      - name: cidade
+        description: "Nome da cidade (ex: Aracaju, BR)."
+        tests:
+          - not_null
+
+      - name: data
+        description: "Data da previsão meteorológica."
+        tests:
+          - not_null
+
+      - name: temperatura
+        description: "Temperatura média do dia."
+        tests:
+          - not_null
+
+      - name: temperatura_max
+        description: "Temperatura máxima do dia."
+        tests:
+          - not_null
+
+      - name: temperatura_min
+        description: "Temperatura mínima do dia."
+        tests:
+          - not_null
+
+      - name: sensacao
+        description: "Sensação térmica média."
+
+      - name: sensacao_max
+        description: "Sensação térmica máxima."
+
+      - name: sensacao_min
+        description: "Sensação térmica mínima."
+
+      - name: umidade
+        description: "Umidade relativa do ar (em %)."
+        tests:
+          - not_null
+
+      - name: precipitacao
+        description: "Volume de precipitação em mm."
+
+      - name: prob_precipitacao
+        description: "Probabilidade de chuva (%)."
+
+      - name: area_precipitada
+        description: "Cobertura percentual do dia com precipitação."
+
+      - name: rajada_vento
+        description: "Velocidade da rajada máxima de vento."
+
+      - name: velocidade_vento
+        description: "Velocidade média do vento."
+
+      - name: direcao_vento
+        description: "Direção do vento em graus."
+
+      - name: indice_uv
+        description: "Índice ultravioleta."
+
+      - name: cobertura_nuvens
+        description: "Cobertura média de nuvens (%)."
+
+      - name: visibilidade
+        description: "Distância de visibilidade."
+
+      - name: nascer_sol
+        description: "Horário do nascer do sol."
+
+      - name: por_sol
+        description: "Horário do pôr do sol."
+
+      - name: fase_lua_valor
+        description: "Valor da fase da lua (0 a 1)."
+        tests:
+         - not_null
+         - dbt_expectations.expect_column_values_to_be_between:
+              min_value: 0
+              max_value: 1
+
+      - name: condicao
+        description: "Condições climáticas gerais."
+        tests:
+          - not_null
+
+      - name: descricao
+        description: "Descrição completa do clima para o dia."
+
+      - name: fonte_dados
+        description: "Origem dos dados meteorológicos: 'fcst' indica previsão (forecast), 'comb' indica combinação de dados de observação e previsão."
+        tests:
+          - not_null
+          - accepted_values:
+              values: ["fcst", "comb", "obs", "stats"]
+
+      - name: load_datetime
+        description: "Data e hora de carregamento dos dados."
+        tests:
+          - not_null

@@ -1,0 +1,29 @@
+version: 2
+
+sources:
+  - name: landing 
+    description: "Fonte de dados meteorológicos brutos coletados via API da Visual Crossing. Inclui localização, timezone, e registros diários aninhados por cidade."
+    database: awsdatacatalog
+    schema: landing
+    tables:
+      - name: clima
+        description: "Tabela com informações climáticas por cidade, incluindo um array de dias e metadados da coleta."
+        columns:
+          - name: querycost
+            description: "Custo computacional da consulta na API."
+          - name: latitude
+            description: "Latitude da localização consultada."
+          - name: longitude
+            description: "Longitude da localização consultada."
+          - name: resolvedaddress
+            description: "Endereço resolvido da consulta (nome da cidade e país)."
+          - name: address
+            description: "Endereço original passado na API."
+          - name: timezone
+            description: "Fuso horário textual do local (ex: America/Sao_Paulo)."
+          - name: tzoffset
+            description: "Diferença de horas do UTC (ex: -3)."
+          - name: days
+            description: "Array de structs contendo as medições diárias do clima para o local informado."
+          - name: stations
+            description: "Struct com informações das estações meteorológicas usadas como base para os dados. Pode conter múltiplas estações identificadas por código."

@@ -1,0 +1,95 @@
+version: 2
+
+models:
+  - name: int_clima_diario
+    description: "Camada intermediária com dados meteorológicos diários enriquecidos com informações derivadas como amplitude térmica, horas de sol e previsão ponderada de precipitação."
+    columns:
+      - name: id_cidade
+        description: "Identificador único da cidade."
+
+      - name: cidade
+        description: "Nome da cidade."
+
+      - name: data
+        description: "Data da previsão meteorológica."
+
+      - name: temperatura
+        description: "Temperatura média do dia."
+
+      - name: temperatura_max
+        description: "Temperatura máxima do dia."
+
+      - name: temperatura_min
+        description: "Temperatura mínima do dia."
+
+      - name: sensacao
+        description: "Sensação térmica média."
+
+      - name: sensacao_max
+        description: "Sensação térmica máxima."
+
+      - name: sensacao_min
+        description: "Sensação térmica mínima."
+
+      - name: umidade
+        description: "Umidade relativa do ar."
+
+      - name: precipitacao
+        description: "Volume total de precipitação."
+
+      - name: prob_precipitacao
+        description: "Probabilidade de precipitação."
+
+      - name: area_precipitada
+        description: "Área coberta por precipitação no dia."
+
+      - name: rajada_vento
+        description: "Velocidade da rajada máxima de vento."
+
+      - name: velocidade_vento
+        description: "Velocidade média do vento."
+
+      - name: direcao_vento
+        description: "Direção do vento."
+
+      - name: indice_uv
+        description: "Índice ultravioleta."
+
+      - name: cobertura_nuvens
+        description: "Percentual de cobertura de nuvens."
+
+      - name: visibilidade
+        description: "Distância de visibilidade."
+
+      - name: nascer_sol
+        description: "Horário do nascer do sol."
+
+      - name: por_sol
+        description: "Horário do pôr do sol."
+
+      - name: fase_lua_valor
+        description: "Valor numérico da fase da lua."
+
+      - name: fase_lua_nome
+        description: "Fase da lua em texto (ex: Lua Cheia)."
+
+      - name: condicao
+        description: "Condições meteorológicas gerais."
+
+      - name: descricao
+        description: "Descrição detalhada do clima."
+      
+      - name: fonte_dados
+        description: "Origem dos dados meteorológicos: 'fcst' indica previsão (forecast), 'comb' indica combinação de dados de observação e previsão."
+
+      - name: load_datetime
+        description: "Data e hora de carregamento do dado."
+
+      - name: amplitude_termica
+        description: "Diferença entre temperatura máxima e mínima do dia."
+
+      - name: precipitacao_esperada
+        description: "Previsão ponderada de precipitação (precip * prob)."
+
+      - name: horas_sol
+        description: "Quantidade estimada de horas de luz solar no dia."
