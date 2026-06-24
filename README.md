@@ -315,7 +315,7 @@ models:
     +materialized: view
 
   intermediate:
-    +materialized: table
+    +materialized: view
 
   marts:
     +materialized: table
