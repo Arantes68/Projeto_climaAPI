@@ -110,6 +110,10 @@ projeto-clima-dbt/
     └── tabelas dbt
 ```
 
+![teste](S3_Folders.png)
+
+![teste](S3_Folders_dbt.png)
+
 ---
 
 # ☁️ 2. Ingestão de Dados com AWS Lambda
