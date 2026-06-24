@@ -112,6 +112,7 @@ projeto-clima-dbt/
 
 ![teste](S3_Folders.png)
 
+
 ![teste](S3_Folders_dbt.png)
 
 ---
