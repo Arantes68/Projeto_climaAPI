@@ -239,12 +239,15 @@ Benefícios:
 
 ![teste](Athena_aws.png)
 
+---
 ![teste](Athena_aws_staging.png)
 ![teste](Athena_aws_staging_tabela.png)
 
+---
 ![teste](Athena_aws_intermediate.png)
 ![teste](Athena_aws_intermediate_tabela.png)
 
+---
 ![teste](Athena_aws_marts.png)
 ![teste](Athena_aws_marts_tabela.png)
 
