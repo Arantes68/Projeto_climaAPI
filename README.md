@@ -141,6 +141,9 @@ AWS Lambda
         ↓
 Amazon S3
 ```
+![teste](Climatempo_api.png)
+
+![teste](Lambda_aws.png)
 
 ---
 
@@ -211,6 +214,10 @@ Responsável por permitir que o Glue:
 * Atualize o catálogo
 * Gerencie metadados
 
+![teste](Glue_aws_1.png)
+
+![teste](Glue_aws_2.png)
+
 ---
 
 # 🔍 4. Consulta dos Dados com Amazon Athena
@@ -228,6 +235,12 @@ Benefícios:
 * Não exige provisionamento de servidores
 * Consulta direta sobre arquivos armazenados no S3
 * Integração nativa com Glue Data Catalog
+
+![teste](Athena_aws.png)
+
+![teste](Athena_aws_staging_tabela.png)
+![teste](Athena_aws_intermediate_tabela.png)
+![teste](Athena_aws_marts_tabela.png)
 
 ---
 
@@ -320,6 +333,8 @@ Exemplo:
 stg_clima
 ```
 
+![teste](staging_pasta.png)
+
 ---
 
 ## ⬜ Camada Intermediate
@@ -336,6 +351,8 @@ Exemplo:
 int_clima
 ```
 
+![teste](intermediate_pasta.png)
+
 ---
 
 ## 🟨 Camada Marts
@@ -351,6 +368,8 @@ Exemplo:
 ```text
 mart_clima
 ```
+
+![teste](marts_pasta.png)
 
 ---
 
